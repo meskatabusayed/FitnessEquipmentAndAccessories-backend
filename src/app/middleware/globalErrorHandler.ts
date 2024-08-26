@@ -5,6 +5,7 @@ import { TErrorSources } from "../interface/error.interface"
 import handleValidationError from "../error/mongooseValidationError"
 import handleDuplicateError from "../error/handleDuplicateError"
 import handleCastError from "../error/handleCastError"
+import config from "../../config"
 // import config from "../config"
 
 
@@ -54,8 +55,8 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     message,
     errorSources,
     err,
-    stack: config.NODE_ENV === 'development' ? err?.stack : null,
+    stack: config.node_env === 'development' ? err?.stack : null,
   })
 }
 
-export default globalErrorHandler
+export default globalErrorHandler;
