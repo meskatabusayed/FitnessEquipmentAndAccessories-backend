@@ -6,6 +6,14 @@ import { OrderRoutes } from "../modules/order/order.route"
 const router = Router()
 
 const moduleRoutes = [
+    {
+        path: '/products',
+        route: ProductRoutes,
+      },
+      {
+        path: '/orders',
+        route: OrderRoutes,
+      },
   
 ]
 
