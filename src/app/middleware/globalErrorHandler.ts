@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import { ErrorRequestHandler } from "express"
 import { TErrorSources } from "../interface/error.interface"
 import handleValidationError from "../error/mongooseValidationError"
 import handleDuplicateError from "../error/handleDuplicateError"
 import handleCastError from "../error/handleCastError"
 import config from "../../config"
-// import config from "../config"
+
 
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
@@ -23,12 +21,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
       message: 'Something went wrong!',
     },
   ]
-  /**
-   * error patterns
-   * success: boolean
-   * message: string
-   * errorSources
-   */
+  
   if (err?.name === 'ValidationError') {
     const simplifiedErrorResponse = handleValidationError(err)
     statusCode = simplifiedErrorResponse.statusCode
@@ -45,11 +38,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     message = simplifiedErrorResponse.message
     errorSources = simplifiedErrorResponse.errorSources
   }
-  // else if (err instanceof Error) {
-  //   const simplifiedErrorResponse = handleError()
-  //   statusCode = simplifiedErrorResponse.statusCode
-  //   errorSources = simplifiedErrorResponse.errorSources
-  // }
+ 
   return res.status(statusCode).json({
     success: false,
     message,
