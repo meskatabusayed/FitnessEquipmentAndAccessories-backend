@@ -16,7 +16,7 @@ app.use(express.json());
 app.use("/api/v1", routes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to the server side of fitness-equipment-and-accessories");
+  res.send("Welcome to the server side of fitness-equipment-and-accessories ph");
 });
 
 
