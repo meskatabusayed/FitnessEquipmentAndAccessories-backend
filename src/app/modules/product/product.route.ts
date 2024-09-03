@@ -9,7 +9,7 @@ router.get('/:productId', ProductControllers.getSingleProductById)
 
 router.post('/', ProductControllers.createProduct)
 
-router.patch('/:productId', ProductControllers.updateProduct)
+router.put('/:productId', ProductControllers.updateProduct)
 
 router.delete('/:productId', ProductControllers.deleteProduct)
 

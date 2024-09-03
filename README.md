@@ -1,7 +1,7 @@
 # PH Fitness (Fitness equipment and accessories system server) 
 
 ## Live URL
-fitness-equipment-and-accessories-backend-iota.vercel.app
+https://fitness-equipment-and-accessories-backend-iota.vercel.app/
 
 ## Introduction
 
